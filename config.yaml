@@ -215,9 +215,6 @@ params:
       - title: Elucidate Quiz Platform [WIP]
         content: This is a volunteer driven web application developed for the non profit organisation Elucidate, as part of the Coders of Causes 2022 Winter projects. I was the project manager in charge of managing the project and one of the principal contributors.
         image: /images/projects/elucidate.png
-        # featured:
-        #   name: Demo
-        #   link: https://hugo-profile.netlify.app
         badges:
           - "Nuxt/Vue"
           - "Django"
@@ -240,6 +237,9 @@ params:
       - title: Wordle Solver
         content: This web application was developed in 48 hours for the UWA Programming Competition Society's 2022 Hackarithms hackathon. I mostly worked on the frontend for this project, focusing on developing an intuitive UI and UX.
         image: /images/projects/wordle.png
+        featured:
+          name: Demo
+          link: https://wordle-solver.jacksun.dev/
         badges:
           - "Javascript"
           - "Flask"
