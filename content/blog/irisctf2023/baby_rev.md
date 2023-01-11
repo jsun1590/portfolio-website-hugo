@@ -104,19 +104,19 @@ undefined8 main(void)
 }
 ```
 
-Analysing the while loop, we can find that if `local_7c` is greater than `0x1f` (which is 31 in decimal), we will be told that our code is valid.
+Analysing the while loop, we find that if `local_7c` is greater than `0x1f` (which is 31 in decimal), we will be told that our code is valid.
 
-Initially, `local_7c` is set to 0. After the end of each iteration, it increments by one.
+Initially, `local_7c` is set to 0. At the end of each iteration, it increments by one.
 
-Following this logic, after 32 iterations, we should arrive at the valid code. However, the following check breaks out of the loop if the `local_7c` is not equal to `local_78` with index `local_7c`:
+Following this logic, after 32 iterations, we should arrive at the valid code. However, the following check breaks out of the loop if `local_7c` is not equal to `local_78` with index `local_7c`:
 
 ```c
 if (local_7c != local_78[local_7c]) break;
 ```
 
-Thus, as `local_7c` increments by one each iteration, we can solve this challenge by setting the ASCII value of each letter in `local_78` equal to its own corresponding index. To do this, we add a corresponding offset number plus the index to the ASCII value.
+Thus, as `local_7c` increments by one each iteration, we can solve this challenge by setting the ASCII value of each letter in `local_78` equal to its own corresponding index. To do this, we add back the corresponding offset number plus the index to the ASCII value.
 
-We can use Ghidra to convert the each address bytes offsets to decimal.
+We can use Ghidra to convert each address byte offset to a decimal representation.
 
 ```c
     local_78[0] = local_78[0] + -105;
@@ -160,7 +160,7 @@ Then, we can use a text editor like VS Code to clean up and isolate the indices.
 [-105, -113, -103, -112, -95, -111, -96, -116, -101, -96, -89, -103, -99, -102, -97, -87, -100, -78, -101, -92, -94, -79, -73, -74, -92, -70, -78, -84, -81, -72, -28, -94]
 ```
 
-Now, we can write a simple python script to invert each number and add its index, before convert that to a character.
+Now, we can write a simple python script to invert each number and add its index, before converting that to a character.
 
 Final solve script:
 
