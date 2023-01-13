@@ -2,6 +2,12 @@ baseURL: "https://jacksun.dev"
 languageCode: "en-AU"
 title: "Jack Sun"
 theme: hugo-profile
+author:
+  name: Jack Sun
+copyright: This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+  International License. For now.....
+languageCode: en-au
+rssLimit: 20
 
 outputs:
   home:
@@ -189,10 +195,13 @@ params:
         date: "2022 - 2025"
         GPA: "7.0 / 7.0"
         WAM: "88.88"
-        # content: |-
-        #   Coursework:
-        #     - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        #     - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+        content: |-
+          Coursework:
+            |  Unit Code | Unit Name | Teaching Period | Grade  | Mark | e  |
+            |---|---|---|---|---|
+            | e  | e  | e  | e  |  e |
+            |   |   |   |   |   |
+            |   |   |   |   |   |
         # featuredLink:
         #   enable: true
         #   name: "Academic Transcript"
