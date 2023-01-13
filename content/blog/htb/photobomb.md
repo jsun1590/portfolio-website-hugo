@@ -129,7 +129,7 @@ find source_images -type f -name '*.jpg' -exec chown root:root {} \;
 
 Immediately, I noticed that `find` is not called explicitly with its full path like the other commands. This is vulnerable to a `PATH` variable manipulation attack. We can inject a malicious path into the PATH variable before `/usr/bin` containing a malicious script called `find`. Then, when we execute `/opt/cleanup.sh`, it will execute our malicious `find` script instead of the original `find` program in `/usr/bin`.
 
-Inside `/tmp/find`, we can write a simple script to install a privileged bash shell with the SUID bit set in `/tmp` and then run `/opt/cleanup.sh`. I have adapted the installation command from [GTFO Bin](https://gtfobins.github.io/gtfobins/bash/#suid) as below for our purposes:
+Inside `/tmp/find`, we can write a simple script to install a privileged bash shell with the SUID bit set in `/tmp` and then run `/opt/cleanup.sh`. I have adapted the installation command from [GTFO Bins](https://gtfobins.github.io/gtfobins/bash/#suid) as below for our purposes:
 
 ```sh
 install -m =xs $(which bash) /tmp/bash
