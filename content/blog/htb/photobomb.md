@@ -1,5 +1,5 @@
 ---
-title: "Photobomb"
+title: "HTB: Photobomb"
 date: 2023-01-11T14:15:25+08:00
 draft: false
 author: "Jack Sun"
