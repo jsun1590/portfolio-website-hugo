@@ -11,8 +11,6 @@ tags:
   - Cybersecurity
   - Reverse
 image: /images/writeups/IrisCTF2023/banner.png
-description: ""
-toc:
 ---
 
 ## Description
