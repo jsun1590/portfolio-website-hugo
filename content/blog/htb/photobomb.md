@@ -107,7 +107,7 @@ User flag: `c2b4e704eecdabe4cba7c012ce9c8fe6`
 
 Running `sudo -l`, we see that `wizard` can run a peculiar script `/opt/cleanup.sh` as root without a password.
 
-! [sudo](/images/writeups/HTB/photobomb/sudo.png)
+![sudo](/images/writeups/HTB/photobomb/sudo.png)
 
 Catting out the contents of the script gives us the following:
 
