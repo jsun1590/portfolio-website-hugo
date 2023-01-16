@@ -16,6 +16,7 @@ image: /images/writeups/idekCTF2022/banner.png
 
 This is a 4 part OSINT challenge centered around the theme of investigating a murder. During the CTF, I solved parts 2 to 4 while one of my teammates (`toasterpwn`) solved part 1.
 
+You can read the other parts of this challenge [here](https://jacksun.dev/tags/osint-crime-confusion/)
 
 ## Description
 
@@ -82,3 +83,5 @@ Lastly, the flag for this challenge can be found by opening the blog post to see
 ![wix_3](/images/writeups/idekCTF2022/osint_crime_confusion/wix_3.png)
 
 Flag: `idek{TGPP_WCIYD}`
+
+You can read the other parts of this challenge [here](https://jacksun.dev/tags/osint-crime-confusion/)
