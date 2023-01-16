@@ -1,5 +1,5 @@
 ---
-title: "idekCTF 2022: Osint Crime Confusion 1-4"
+title: "idekCTF 2022: Osint Crime Confusion 2: W as in Weapon"
 date: 2023-01-16T17:37:37+08:00
 draft: true
 author: "Jack Sun"
