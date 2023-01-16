@@ -17,7 +17,7 @@ image: /images/writeups/IrisCTF2023/banner.png
 
 - Name: baby_rev
 - Category: Reverse
-- 50 pts, 251 Solves
+- 50 pts, 251 solves
 - Written by `nope`
 
 I needed to edit some documents for my homework but I don't want to buy a license to this software! Help me out pls?
