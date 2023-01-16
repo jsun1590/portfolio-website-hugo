@@ -1,6 +1,6 @@
 ---
 title: "idekCTF 2022: Osint Crime Confusion 2: W as in Weapon"
-date: 2023-01-16T17:37:37+08:00
+date: 2023-01-16T19:07:00+08:00
 draft: false
 author: "Jack Sun"
 tags:
@@ -75,7 +75,7 @@ The bar at the top is a timeline/history scrubber. Moving the scrubber to the ve
 
 ![chaos_2](/images/writeups/idekCTF2022/osint_crime_confusion/chaos_2.png)
 
-Moving the scrubber to version 338 reveals the murder weapon, the `HUBBLE SPACE TELESCOPE MODEL`.
+Moving the scrubber to version 338 reveals the murder weapon `HUBBLE SPACE TELESCOPE MODEL`.
 
 ![chaos_3](/images/writeups/idekCTF2022/osint_crime_confusion/chaos_3.png)
 
