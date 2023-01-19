@@ -9,5 +9,6 @@
         "nmap",
         "organisation",
         "Writeups"
-    ]
+    ],
+    "cSpell.enabled": true
 }
