@@ -193,43 +193,7 @@ params:
         school:
           name: "University of Western Australia"
         date: "2022 - 2025"
-        GPA: "7.0 / 7.0"
-        WAM: "88.88"
-        content: |-
-          <br />
-
-          **Coursework**
-          |  Unit Code | Unit Name | Teaching Period | Grade  | Mark |
-          |---|---|---|---|---|
-          | CITS1003 | Introduction to Cybersecurity | 2022/1 | HD | 95 |
-          | CITS3006 | Penetration Testing | 2022/2 | HD | 94 |
-          | CITS1402 | Relational Database Management Systems | 2022/2 | HD | 92 |
-          | CITS2002 | Systems Programming | 2022/2 | HD | 91 |
-          | FINA1221 | Intro to Finance | 2022/1 | HD | 87 |
-          | CITS1001 | Software Engineering with Java | 2022/1 | HD | 85 |
-          | GCRL1000 | Global Challenges, Research & Leadership | 2022/1 | HD | 84 |
-          | ACCT1101 | Financial Accounting | 2022/2 | HD | 83 |
-          | CARS1000 | Communication and Research Skills (CARS) | 2022/2 | UP | N/A |
-          | AACE1000 | Academic Conduct Essentials | 2022/1 | UP | N/A |
-          | INDG1000 | Indigenous Studies Essentials | 2022/1 | UP | N/A |
-
-          <br />
-
-          **Legend**
-          | Grade | Meaning |
-          |---|---|
-          | HD | Higher Distinction |
-          | D | Distinction |
-          | CR | Credit Pass |
-          | P | Pass |
-          |N/N+ | Fail |
-          |UP | Ungraded Pass |
-
-        # featuredLink:
-        #   enable: true
-        #   name: "Academic Transcript"
-        #   url: "https://example.com"
-
+        
   # Achievements
   achievements:
     enable: false
