@@ -4,9 +4,9 @@ title: "Jack Sun"
 theme: hugo-profile
 author:
   name: Jack Sun
-copyright: This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+copyright:
+  This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
   International License. For now.....
-languageCode: en-au
 rssLimit: 20
 
 outputs:
@@ -129,7 +129,6 @@ params:
 
       I have a strong interest in web development and cybersecurity. As a hobby, I play Cybersecurity CTFs with the team [Emu Explot](https://ctftime.org/team/160273).
 
-
     image: /images/branding/profile.png
     # button:
     #   enable: true
@@ -200,7 +199,7 @@ params:
         school:
           name: "University of Western Australia"
         date: "2022 - 2024"
-        
+
   # Achievements
   achievements:
     enable: false
