@@ -125,11 +125,10 @@ params:
       - CTF Enthusiast
       - Freelancer
     content: |
-      I am a second year [Bachelor of Philosophy (Honours)](https://www.uwa.edu.au/study/courses/bachelor-of-philosophy/) student majoring in Computer Science and Cybersecurity at the University of Western Australia.
+      Software engineer.
 
-      I have a strong interest in web development and cybersecurity. As a hobby, I play Cybersecurity CTFs with the team [PissedEmu](https://ctftime.org/team/160273), currently rank 1 in Australia.
+      I have a strong interest in web development and cybersecurity. As a hobby, I play Cybersecurity CTFs with the team [Emu Explot](https://ctftime.org/team/160273).
 
-      I am currently a freelance developer and an Ordinary Committee Member at Coders For Causes, helping to organise volunteer driven software engineering projects.
 
     image: /images/branding/profile.png
     # button:
@@ -189,10 +188,18 @@ params:
     # title: "Custom Name"
     index: false
     items:
-      - title: "Bachelor of Philosophy (Honours) in Computer Science and Cybersecurity"
+      - title: "Bachelor of Science, Computer Science and Cybersecurity"
         school:
           name: "University of Western Australia"
-        date: "2022 - 2025"
+        date: "2025"
+      - title: "Exchange Program, Computer Science and Cybersecurity"
+        school:
+          name: "National University of Singapore"
+        date: "2023"
+      - title: "Bachelor of Philosophy (Honours), Computer Science and Cybersecurity"
+        school:
+          name: "University of Western Australia"
+        date: "2022 - 2024"
         
   # Achievements
   achievements:
