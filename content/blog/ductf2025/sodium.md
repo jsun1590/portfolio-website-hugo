@@ -1,6 +1,6 @@
 ---
 title: "DUCTF 2025: Sodium"
-date: 2025-07-22T17:58:00+08:00
+date: 2025-07-23T00:49:00+08:00
 draft: false
 author: "Jack Sun"
 tags:
@@ -117,7 +117,9 @@ While the `gopher` and `dict` schemes were disallowed, we were actually able to 
 
 For example, here is the payload used to read `/etc/passwd`:
 
-` file:///etc/passwd`
+```
+ file:///etc/passwd
+```
 
 Note the space character preceeding `file`.
 
@@ -188,7 +190,7 @@ Now we can call the RPC service without having to smuggle additional HTTP reques
 
 ### Completing the Attack Chain
 
-The RPC service exposes an endpoint to read logs. This is a classic set up for a log poisoning vulnerabilty, so I started exploring in this direction. From the snippet below, we can see that such a vulnerability does indeed exist, by leveraging a double format:
+The RPC service exposed an endpoint to read logs. This is a classic set up for a log poisoning vulnerabilty, so I started exploring in this direction. From the snippet below, we can see that such a vulnerability does indeed exist, by leveraging a double format:
 
 ```py
 def build_stats_page(get_log=False, get_config=True):
@@ -227,11 +229,11 @@ def get_logs():
     return logs
 ```
 
-<1> Uer-controllable logs are read from `debug.log`
-<2> User-controllable logs are formatted into `template`
-<3> The template is formatted again via config!
+1. User-controllable logs are read from `debug.log`
+2. User-controllable logs are formatted into `template`
+3. The template is formatted again via config!
 
-[This article](https://podalirius.net/en/articles/python-format-string-vulnerabilities/) explains the attack in more detail, but in essence, if we can control the template via a format and it is later formatted again, we can leak global variables. As it turns out, we can quit easily control what is presented in the logs. In fact, such a possibility exists in the route to read the logs itself.
+[This article](https://podalirius.net/en/articles/python-format-string-vulnerabilities/) explains the attack in more detail, but in essence, if we can control the template via a format and it is later formatted again, we can leak global variables. As it turns out, we can quite easily control what is presented in the logs. In fact, such a possibility exists in the route to read the logs itself.
 
 ```python
 if target.startswith("/stats"):
@@ -249,8 +251,8 @@ if target.startswith("/stats"):
     return
 ```
 
-<1> Query string parameters are split by the `&` symbol.
-<2> Each parameter is logged.
+1. Query string parameters are split by the `&` symbol.
+2. Each parameter is logged.
 
 The read the flag, we inject `{config.__init__.__globals__}` into the logs such that, during the second format, the dunder methods of the actual config object will be used to leak the gloal variables.
 
