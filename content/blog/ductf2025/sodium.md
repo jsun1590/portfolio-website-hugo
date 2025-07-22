@@ -115,11 +115,21 @@ During research, I came across [this article](https://www.vicarius.io/vsociety/p
 
 While the `gopher` and `dict` schemes were disallowed, we were actually able to use the `file` scheme to achieve arbritrary file read!
 
-For example, here is the payload used to read `/etc/passwd`: ` file:///etc/passwd`. Note the space character preceeding `file`.
+For example, here is the payload used to read `/etc/passwd`:
+
+` file:///etc/passwd`
+
+Note the space character preceeding `file`.
 
 ![afr](/images/writeups/DUCTF2025/sodium/afr.png)
 
-From this, we can read `/home/customerapp/customer_app/.env` to leak the auth key via the payload ` file:///home/customerapp/customer_app/.env`. We get:
+From this, we can read `/home/customerapp/customer_app/.env` to leak the auth key via the payload
+
+```
+ file:///home/customerapp/customer_app/.env
+```
+
+We get:
 
 ```
 Website Responds with: <br><pre>AUTHENTICATION_KEY=2e48228116c6ae588ba6155859f0f2cf67e81f01</pre>
@@ -127,8 +137,8 @@ Website Responds with: <br><pre>AUTHENTICATION_KEY=2e48228116c6ae588ba6155859f0f
 
 ### Bypassing the IP Check
 
-I found the `Pound` reverse proxy and the `h11` HTTP server used in this challenge to be quite unusal and subsequently I did some research into these software.
-Consequently, I found [this Github advisory](https://github.com/advisories/GHSA-vqfr-h8mv-ghfj) which detailed CVE-2025-43859, a request smuggling vulnerabilty which can be exploited if used in conjunction with a reverse proxy such as... Pound! Again, further details can be found in the advisory, but the PoC below allows us to smuggle an additional request that we have full control over past Pound to a `h11` server.
+I thought that the `Pound` reverse proxy and the `h11` HTTP server used in this challenge were quite unusal and subsequently I did some research into these software.
+Consequently, I found [this Github advisory](https://github.com/advisories/GHSA-vqfr-h8mv-ghfj) which detailed `CVE-2025-43859`, a request smuggling vulnerabilty which can be exploited if used in conjunction with a reverse proxy such as... Pound! Again, further details can be found in the advisory, but the PoC below allows us to smuggle an additional request that we have full control over past Pound to a `h11` server.
 
 ```
 GET /one HTTP/1.1
