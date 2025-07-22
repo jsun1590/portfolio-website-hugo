@@ -113,7 +113,7 @@ A common bypass is to use a 3xx HTTP redirect to redirect a valid `http` request
 
 During research, I came across [this article](https://www.vicarius.io/vsociety/posts/cve-2023-24329-bypassing-url-blackslisting-using-blank-in-python-urllib-library-4). Older versions of `urllib` are vulnerable to `CVE-2023-24329`, which allowed us to bypass the URL scheme denylist by prefixing a space character to the beginning of the provided URL. For brevity, I will not explain the CVE here, details can be found in the aforementioned article.
 
-While the `gopher` and `dict` schemes were disallowed, we were actually able to use the `file` scheme to achieve arbritrary file read!
+While the `gopher` and `dict` schemes were disallowed, we were actually able to use the `file` scheme to achieve arbitrary file read!
 
 For example, here is the payload used to read `/etc/passwd`:
 
@@ -121,7 +121,7 @@ For example, here is the payload used to read `/etc/passwd`:
  file:///etc/passwd
 ```
 
-Note the space character preceeding `file`.
+Note the space character preceding `file`.
 
 ![afr](/images/writeups/DUCTF2025/sodium/afr.png)
 
@@ -162,7 +162,7 @@ Transfer-Encoding: chunked
 
 I used this vulnerability to smuggle an additional request to `h11` with a `x-forwarded-for` header that is not modified by Pound. If we set the `x-forwarded-for` header to `127.0.0.1` we can bypass the IP check.
 
-### Adding ourserlves to the IP Allowlist
+### Adding Ourselves to the IP Allowlist
 
 Now that we have the auth key and an IP check bypass we can start interacting with the RPC service. To make our lives a bit easier, we can change the allowlist to accept our actual IP address:
 
@@ -190,7 +190,7 @@ Now we can call the RPC service without having to smuggle additional HTTP reques
 
 ### Completing the Attack Chain
 
-The RPC service exposed an endpoint to read logs. This is a classic set up for a log poisoning vulnerabilty, so I started exploring in this direction. From the snippet below, we can see that such a vulnerability does indeed exist, by leveraging a double format:
+The RPC service exposed an endpoint to read logs. This is a classic set up for a log poisoning vulnerability, so I started exploring in this direction. From the snippet below, we can see that such a vulnerability does indeed exist, by leveraging a double format:
 
 ```py
 def build_stats_page(get_log=False, get_config=True):
@@ -254,7 +254,7 @@ if target.startswith("/stats"):
 1. Query string parameters are split by the `&` symbol.
 2. Each parameter is logged.
 
-The read the flag, we inject `{config.__init__.__globals__}` into the logs such that, during the second format, the dunder methods of the actual config object will be used to leak the gloal variables.
+To read the flag, we can inject `{config.__init__.__globals__}` into the logs such that, during the second format, the dunder methods of the actual config object will be used to leak the global variables.
 
 ```
 GET https://sodium-d07b1bc45451f940.iso.2025.ductf.net/stats?a={config.__init__.__globals__}
